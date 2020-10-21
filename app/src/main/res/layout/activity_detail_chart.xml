@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:background="@drawable/bg_main_gradient"
+        android:background="@android:color/transparent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_ratting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/rattings"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <lecho.lib.hellocharts.view.PieChartView
+            android:id="@+id/chart_ratting"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ratting" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/recomended"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/appCompatTextView5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chart_ratting" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/exceptional"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/appCompatTextView7"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/appCompatTextView6"
+            app:layout_constraintTop_toBottomOf="@+id/chart_ratting" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/meh"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/appCompatTextView8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/appCompatTextView5"
+            app:layout_constraintTop_toBottomOf="@+id/chart_ratting" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/appCompatTextView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/skip"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/appCompatTextView7"
+            app:layout_constraintTop_toBottomOf="@+id/chart_ratting" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_rate_recomended"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:drawableStart="@drawable/shape_rounded_blue"
+            android:drawableLeft="@drawable/shape_rounded_blue"
+            android:drawablePadding="8dp"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatTextView6"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView6"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView6"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="86" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_rate_exceptional"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:drawableStart="@drawable/shape_rounded_green"
+            android:drawableLeft="@drawable/shape_rounded_green"
+            android:drawablePadding="8dp"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatTextView5"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView5"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView5"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="86" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_rate_meh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:drawableStart="@drawable/shape_rounded_orange"
+            android:drawableLeft="@drawable/shape_rounded_orange"
+            android:drawablePadding="8dp"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatTextView7"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView7"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView7"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="86" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_rate_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:drawableStart="@drawable/shape_rounded_red"
+            android:drawableLeft="@drawable/shape_rounded_red"
+            android:drawablePadding="8dp"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatTextView8"
+            app:layout_constraintStart_toStartOf="@+id/appCompatTextView8"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatTextView8"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="86" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,7 @@
+include ':dynamic_game_favorite'
+include ':dynamic_game_cart'
+include ':core'
+include ':domain'
+include ':data'
+include ':app'
+rootProject.name = "TokoGame"

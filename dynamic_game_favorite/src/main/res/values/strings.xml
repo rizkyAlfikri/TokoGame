@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dolar">$</string>
+    <string name="undo">Undo</string>
+    <string name="success_remove_favorite">Success remove game from favorite list</string>
+    <string name="Oops">Oops seems like you haven\'t add any game into your wishlist</string>
+</resources>

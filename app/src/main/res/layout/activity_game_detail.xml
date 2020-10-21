@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="gameDetail"
+            type="com.alfikri.rizky.tokogame.model.GameDetailModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_main_gradient"
+        tools:context=".feature.detail.DetailGameActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/colorPrimaryDark"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collape_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:contentScrim="@color/colorPrimaryDark"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                app:title="@{gameDetail.name}"
+                app:titleEnabled="true">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_collapseMode="pin">
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="match_parent"
+                        app:duration="800"
+                        android:id="@+id/shimmer_detail_image">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/bg_skleton">
+                        </View>
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_game"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        app:imagePath="@{gameDetail.imagePath}" />
+
+                </FrameLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    android:gravity="top"
+                    app:popupTheme="@style/AppTheme.PopupOverlay"
+                    app:navigationIcon="@drawable/ic_arrow_back"
+                    app:titleTextColor="@color/colorMainWhite"/>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.alfikri.rizky.tokogame.utils.LockedNestedScrollView
+            android:id="@+id/nested_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_detail_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:duration="800">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <include layout="@layout/shimmer_game_detail_body" />
+                    </LinearLayout>
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <include
+                    android:id="@+id/layoutDetailBody"
+                    layout="@layout/activity_detail_body" />
+
+                <include
+                    android:id="@+id/layoutDetailInfo"
+                    layout="@layout/activity_detail_info" />
+
+                <include
+                    android:id="@+id/layoutDetailChart"
+                    layout="@layout/activity_detail_chart" />
+
+                <include
+                    android:id="@+id/layoutDetailMultiView"
+                    layout="@layout/activity_detail_multi_view" />
+
+            </LinearLayout>
+
+        </com.alfikri.rizky.tokogame.utils.LockedNestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

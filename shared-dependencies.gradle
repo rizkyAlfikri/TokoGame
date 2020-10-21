@@ -1,0 +1,68 @@
+dependencies {
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
+    implementation "androidx.legacy:legacy-support-v4:$legacy_support_version"
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$androidx_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    implementation "androidx.cardview:cardview:$cardview_version"
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    //koin
+    implementation "org.koin:koin-core:$koin_version"
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-android-viewmodel:$koin_version"
+
+
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
+
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$logging_interceptor_version"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlin_coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlin_coroutines_version"
+    implementation "androidx.room:room-ktx:$room_version"
+
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+    // Shimmer Layout
+    implementation "com.facebook.shimmer:shimmer:$shimmer_version"
+
+    // Swipe Refresh Layout
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
+    implementation "com.jakewharton.rxbinding2:rxbinding:$rxbinding_version"
+
+    implementation "com.google.android:flexbox:$flexbox_version"
+
+    // Groupie
+    implementation "com.xwray:groupie:$groupie_version"
+    implementation "com.xwray:groupie-kotlin-android-extensions:$groupie_version"
+
+    // Read More Text
+    implementation "com.borjabravo:readmoretextview:$read_more_version"
+
+    // Pie Chart
+    implementation "com.github.lecho:hellocharts-library:$pie_chart_version"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-ui:$navigation_component"
+    implementation "androidx.navigation:navigation-fragment:$navigation_component"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_component"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_component"
+
+    // Dynamic delivery
+    implementation "com.google.android.play:core:$dynamic_version"
+
+}

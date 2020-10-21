@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.alfikri.rizky.tokogame.feature.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_nav_home_to_nav_favorite"
+            app:destination="@id/nav_wishlist" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_slideshow"
+            app:destination="@id/nav_setting" />
+        <action
+            android:id="@+id/action_nav_home_to_detailGameActivity"
+            app:destination="@id/detailGameActivity" />
+        <action
+            android:id="@+id/action_nav_home_to_cartGameActivity"
+            app:destination="@id/cartGameActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_wishlist"
+        android:name="com.alfikri.rizky.dynamic_game_favorite.favorite.FavoriteGameFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_game_favorite">
+        <action
+            android:id="@+id/action_nav_favorite_to_detailGameActivity"
+            app:destination="@id/detailGameActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.alfikri.rizky.tokogame.feature.setting.SettingFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <activity
+        android:id="@+id/detailGameActivity"
+        android:name="com.alfikri.rizky.tokogame.feature.detail.DetailGameActivity"
+        android:label="DetailGameActivity">
+        <deepLink app:uri="app://detailGameFeature" />
+    </activity>
+
+    <activity
+        android:id="@+id/cartGameActivity"
+        android:name="com.alfikri.rizky.dynamic_game_cart.feature.CartGameActivity"
+        android:label="CartGameActivity"
+        app:moduleName="dynamic_game_cart">
+        <deepLink app:uri="dynamicGameCart://cartGameFeature1" />
+    </activity>
+
+</navigation>

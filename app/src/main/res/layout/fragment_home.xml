@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_main_gradient"
+        tools:context=".feature.home.HomeFragment">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/colorPrimaryDark"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                app:titleEnabled="false">
+
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_game_promo_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginTop="8dp"
+                    shimmer:duration="800"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <include layout="@layout/shimmer_game_promo" />
+
+                        <include layout="@layout/shimmer_game_promo" />
+
+                        <include layout="@layout/shimmer_game_promo" />
+                    </LinearLayout>
+
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_game_promo"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_game_promo" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@color/colorMainWhite"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:transitionName="@string/shared_element_dialog_fragment"
+                    app:cardCornerRadius="8dp"
+                    tools:targetApi="lollipop">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@color/colorMainWhite"
+                        android:src="@drawable/ic_filter_main" />
+
+                </androidx.cardview.widget.CardView>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_collapseMode="pin">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_popular"
+                            android:layout_width="100dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/bg_rounded_active_button"
+                            android:clickable="true"
+                            android:drawablePadding="8dp"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="@string/popular"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorMainWhite"
+                            android:textSize="16sp"
+                            app:cornerRadius="24dp"
+                            tools:targetApi="m"
+                            tools:ignore="UnusedAttribute" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_rate"
+                            android:layout_width="100dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/bg_rounded_button"
+                            android:clickable="true"
+                            android:drawablePadding="8dp"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="@string/rating"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorMainWhite"
+                            android:textSize="16sp"
+                            app:cornerRadius="24dp"
+                            tools:targetApi="m"
+                            tools:ignore="UnusedAttribute" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_release"
+                            android:layout_width="100dp"
+                            android:layout_height="36dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:background="@drawable/bg_rounded_button"
+                            android:clickable="true"
+                            android:drawablePadding="8dp"
+                            android:focusable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="@string/release"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorMainWhite"
+                            android:textSize="16sp"
+                            app:cornerRadius="24dp"
+                            tools:targetApi="m"
+                            tools:ignore="UnusedAttribute" />
+
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_game_list_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            shimmer:duration="800">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/shimmer_game_list" />
+
+                <include layout="@layout/shimmer_game_list" />
+
+                <include layout="@layout/shimmer_game_list" />
+
+                <include layout="@layout/shimmer_game_list" />
+
+                <include layout="@layout/shimmer_game_list" />
+
+                <include layout="@layout/shimmer_game_list" />
+
+                <include layout="@layout/shimmer_game_list" />
+
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_game_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            tools:listitem="@layout/item_game_list" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:elevation="12dp"
+            tools:targetApi="lollipop" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="remove"><u>Remove</u></string>
+    <string name="detail_purchase">Detail Purchase</string>
+    <string name="total_item">Total Item</string>
+    <string name="total_price">Total Price</string>
+    <string name="purchase">Purchase</string>
+    <string name="cart">Cart</string>
+    <string name="success_remove_cart">Success remove game from cart list</string>
+    <string name="dolar">$</string>
+    <string name="coming_soon">Coming soon</string>
+    <string name="undo">Undo</string>
+</resources>

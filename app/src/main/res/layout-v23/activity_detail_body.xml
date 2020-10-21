@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="gameDetail"
+            type="com.alfikri.rizky.tokogame.model.GameDetailModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        tools:background="@drawable/bg_main_gradient">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:text="@{gameDetail.name}"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Ghost Of Fukushima" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_genre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="center"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name"
+            app:setText="@{gameDetail.genre}"
+            tools:text="Action, Fantasy, RPG" />
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/fl_platform"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            app:flexDirection="row"
+            app:flexWrap="wrap"
+            app:justifyContent="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_genre" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_release"
+            android:layout_width="120dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_rounded_button"
+            android:gravity="center"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/cardView"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fl_platform"
+            app:setDate="@{gameDetail.date}"
+            tools:text="14 August 2020" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="120dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_release"
+            app:layout_constraintTop_toBottomOf="@+id/fl_platform">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#240046"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_rate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_rounded_button"
+                    android:textColor="@color/colorMainWhite"
+                    android:textSize="14sp"
+                    app:setRating="@{gameDetail.rating}"
+                    tools:layout_editor_absoluteX="210dp"
+                    tools:layout_editor_absoluteY="247dp"
+                    tools:text="4.5/5" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_star" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/_50_0"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btn_buy"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_release" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_buy"
+            android:layout_width="72dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_rounded_outline_accent"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="@string/buy"
+            android:textAllCaps="false"
+            android:textColor="@color/colorAccent"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btn_add_to_chart"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/price"
+            app:layout_constraintTop_toBottomOf="@+id/tv_release" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_to_chart"
+            android:layout_width="136dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_rounded_fill_accent"
+            android:clickable="true"
+            android:drawableStart="@drawable/ic_add_shopping_cart"
+            android:drawablePadding="-8dp"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingStart="16dp"
+            android:text="@string/add_to_cart"
+            android:textAllCaps="false"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_buy"
+            app:layout_constraintTop_toBottomOf="@+id/cardView"
+            tools:ignore="RtlSymmetry" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/about"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_buy" />
+
+        <com.borjabravo.readmoretextview.ReadMoreTextView
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:lineSpacingExtra="8dp"
+            android:textColor="@color/colorMainWhite"
+            android:textSize="14sp"
+            app:colorClickableText="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_about"
+            app:layout_constraintVertical_bias="0.0"
+            app:setDesc="@{gameDetail.description}"
+            app:trimCollapsedText="@string/show_more"
+            app:trimExpandedText="@string/show_less"
+            app:trimLength="300"
+            app:trimMode="trimModeLength"
+            tools:text="@tools:sample/lorem/random" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

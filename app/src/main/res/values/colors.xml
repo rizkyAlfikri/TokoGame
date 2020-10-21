@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#240046</color>
+    <color name="colorPrimaryDark">#10002B</color>
+    <color name="colorAccent">#E36414</color>
+    <color name="colorMainWhite">#E0E1DD</color>
+    <color name="colorBlackMainTransparant">#BF000000</color>
+    <color name="colorBlackHalfTransparant">#80000000</color>
+    <color name="colorActiveRating">#FFD700</color>
+    <color name="colorGrayPrimary">#828282</color>
+    <color name="colorBlueChart">#0C234E</color>
+    <color name="colorGreenChart">#143601</color>
+    <color name="coloRedChart">#9A031E</color>
+    <color name="colorGrayLoading">#DDDDDD</color>
+</resources>
